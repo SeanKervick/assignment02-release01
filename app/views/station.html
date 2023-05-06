@@ -1,0 +1,56 @@
+#{extends 'main.html' /}
+#{set title:'Station' /}
+
+#{menu id:"dashboard"/}
+
+<div class="content box">
+  <h1 class="title">
+    ${station.name}
+  </h1>
+  #{if station.readings.size() > 0}
+  <div class="columns has-text-info">
+    <div class="column has-background-info-light mr-1">
+      <p>
+        ${station.name}
+      </p>
+    </div>
+    <div class="column has-background-info-light mx-1">
+      <p>
+        Weather <br><br>
+        ${station.weather()}
+      </p>
+    </div>
+    <div class="column has-background-info-light mx-1">
+      Temp <br><br>
+      ${station.recentTempC()}C<br>
+      ${station.recentTempF()}F
+    </div>
+    <div class="column has-background-info-light mx-1">
+      Wind<br><br>
+      ${station.beaufort()} bft<br>
+      ${station.direction()}<br>
+      Feels like ${station.windChill()} C
+    </div>
+    <div class="column has-background-info-light ml-1">
+      Pressure<br><br>
+      ${station.recentPressure()}
+    </div>
+  </div>
+  #{/if}
+  #{else}
+  <div class="container">
+    <a href="/station/${station.id}">
+      <div class="tags has-addons my-5">
+        <span class="tag has-background-info-light is-large has-text-info m-0">Please enter a reading for station: ${station.name}</span>
+      </div>
+    </a>
+  </div>
+  #{/else}
+  #{list-info station:station /}
+</div>
+<div class="content box">
+  <h1 class="title">
+    ${station.name}
+  </h1>
+  #{addreading station:station /}
+</div>

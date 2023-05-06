@@ -1,0 +1,37 @@
+Reading(r1):
+  code: 100
+  temperature: 5.5
+  windSpeed: 10.0
+  windDirection: 220
+  pressure: 1004
+Reading(r2):
+  code: 400
+  temperature: 10.5
+  windSpeed: 8
+  windDirection: 200
+  pressure: 999
+Reading(r3):
+  code: 600
+  temperature: 13.5
+  windSpeed: 14.0
+  windDirection: 90
+  pressure: 1002
+Reading(r4):
+  code: 800
+  temperature: 20
+  windSpeed: 75
+  windDirection: 120
+  pressure: 1001
+
+Station(s1):
+  name: Tramore
+  readings:
+    - r1
+    - r2
+
+Station(s2):
+  name: Dunmore East
+  readings:
+    - r3
+    - r4
+

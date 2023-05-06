@@ -1,0 +1,4 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#https://stackoverflow.com/questions/10873590/using-switch-statement-with-a-range-of-value-in-each-case
+#Math.pow(windSpeed, 0.16) Pat - Slack
